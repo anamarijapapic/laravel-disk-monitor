@@ -57,10 +57,7 @@
         "laravel": {
             "providers": [
                 "AnamarijaPapic\\DiskMonitor\\DiskMonitorServiceProvider"
-            ],
-            "aliases": {
-                "DiskMonitor": "AnamarijaPapic\\DiskMonitor\\Facades\\DiskMonitor"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
