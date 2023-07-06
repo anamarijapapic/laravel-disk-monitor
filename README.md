@@ -51,7 +51,7 @@ php artisan vendor:publish --tag="disk-monitor-views"
 ## Usage
 
 ```bash
-php artisan disk-monitor:record-metrics"
+php artisan disk-monitor:record-metrics
 ```
 
 ## Testing
