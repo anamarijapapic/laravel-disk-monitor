@@ -2,7 +2,7 @@
 
 namespace AnamarijaPapic\DiskMonitor;
 
-use AnamarijaPapic\DiskMonitor\Commands\RecordDiskMetrics;
+use AnamarijaPapic\DiskMonitor\Commands\RecordDiskMetricsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -20,6 +20,6 @@ class DiskMonitorServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_disk_monitor_table')
-            ->hasCommand(RecordDiskMetrics::class);
+            ->hasCommand(RecordDiskMetricsCommand::class);
     }
 }
