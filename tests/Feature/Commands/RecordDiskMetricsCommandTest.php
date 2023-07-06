@@ -6,6 +6,11 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use function Pest\Laravel\artisan;
 
+beforeEach(function () {
+    Storage::fake('local');
+    Storage::fake('anotherDisk');
+});
+
 it('will record zero files for empty disks', function () {
     artisan(RecordDiskMetricsCommand::class)
         ->assertExitCode(Command::SUCCESS);

@@ -3,6 +3,8 @@
 namespace AnamarijaPapic\DiskMonitor;
 
 use AnamarijaPapic\DiskMonitor\Commands\RecordDiskMetricsCommand;
+use AnamarijaPapic\DiskMonitor\Http\Controllers\DiskMetricsController;
+use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -21,5 +23,14 @@ class DiskMonitorServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_disk_monitor_table')
             ->hasCommand(RecordDiskMetricsCommand::class);
+    }
+
+    public function packageRegistered()
+    {
+        Route::macro('diskMonitor', function (string $prefix) {
+            Route::prefix($prefix)->group(function () {
+                Route::get('/', '\\'.DiskMetricsController::class);
+            });
+        });
     }
 }
