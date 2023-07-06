@@ -33,6 +33,12 @@ This is the contents of the published config file:
 
 ```php
 return [
+    /**
+     * The names of the disks you want to monitor.
+     */
+    'disk_names' => [
+        'local',
+    ],
 ];
 ```
 
@@ -44,9 +50,8 @@ php artisan vendor:publish --tag="disk-monitor-views"
 
 ## Usage
 
-```php
-$diskMonitor = new AnamarijaPapic\DiskMonitor();
-echo $diskMonitor->echoPhrase('Hello, AnamarijaPapic!');
+```bash
+php artisan disk-monitor:record-metrics"
 ```
 
 ## Testing
